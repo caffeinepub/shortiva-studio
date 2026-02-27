@@ -1,29 +1,40 @@
 # Shortiva Studio
 
 ## Current State
-Fresh project with no App.tsx or backend logic. Only a bare React scaffold with shadcn/ui components available.
+Full UGC portfolio site with Navbar, Hero (parallax), Services, Portfolio grid, Pricing (3 plans with USD prices), Testimonials, Contact form, and Footer. Has basic motion/react animations (fadeUp, stagger, scroll parallax). Social links in footer point to generic URLs. No real contact info shown. Pricing uses USD.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Full UGC creator / content studio landing page for "Shortiva Studio"
-- Hero section with tagline and CTA to book/contact
-- Services section (UGC video content, product photography, social media content, brand storytelling)
-- Portfolio / work showcase section with sample content cards
-- Pricing packages section (3 tiers)
-- Testimonials / social proof section
-- Contact / booking form (name, brand name, email, message, submit)
-- Navigation bar with logo and smooth-scroll links
-- Footer with business name and social links
+- Gmail contact: shortivastudio@gmail.com — show in Contact section (left info block) and/or footer
+- Instagram: @shortiva.studio — update footer Instagram href to https://instagram.com/shortiva.studio
+- Pricing disclaimer below the 3 pricing cards: "Note: Prices depend on your account type — the above prices may vary."
+- 3D visual effects: CSS 3D card transforms (rotateX/rotateY on hover using mouse position), floating/levitating 3D orbs in hero, perspective depth on sections
+- Enhanced scroll animations: parallax layers with different speeds, scroll-triggered reveals with slide+depth (translateZ), horizontal scroll marquee for portfolio tags or stats, sticky section transitions
 
 ### Modify
-- Nothing (fresh build)
+- PLANS pricing:
+  - Starter: ₹599
+  - Growth (mid): ₹1,299
+  - Premium: ₹1,999
+- Footer Instagram href: https://instagram.com/shortiva.studio
+- Contact section info list: add Gmail and Instagram as clickable contact items
+- Hero: add 3D floating geometric shapes (CSS/SVG) that animate on scroll
+- Pricing cards: add 3D hover tilt effect using mouse tracking
+- Service cards: add 3D tilt on hover
+- Portfolio cards: deeper 3D lift on hover
 
 ### Remove
-- Nothing
+- Nothing removed
 
 ## Implementation Plan
-1. Generate backend with a contact form submission handler (store messages)
-2. Build full single-page React frontend with all sections above
-3. Wire contact form to backend submission
-4. Deploy
+1. Update PLANS array: change prices to ₹599, ₹1,299, ₹1,999
+2. Add pricing disclaimer text below pricing cards grid
+3. Update footer Instagram href to https://instagram.com/shortiva.studio
+4. Add Gmail (shortivastudio@gmail.com) and Instagram (@shortiva.studio) to Contact left info block as clickable links
+5. Add useTilt hook for 3D mouse-tracking card tilt (perspective + rotateX/Y)
+6. Apply tilt to Pricing cards, Service cards, Portfolio cards
+7. Add 3D floating geometric shapes to Hero (CSS keyframe animations: float + rotate3d)
+8. Add scroll-driven parallax depth layers using useScroll + useTransform with multiple speeds
+9. Add horizontal marquee strip (brand logos / stats) between sections
+10. Validate and build
